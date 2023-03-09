@@ -1,0 +1,212 @@
+body {
+	background: linear-gradient(to top, rgb(216, 221, 228), rgb(2, 7, 47));
+	min-height: 100vh;
+}
+
+.App {
+	text-align: center;
+}
+
+.App-header p {
+	font-size: 36px;
+	color: #fff;
+}
+
+/* =================================================================*/
+/* ===== FORM =====================0
+  /* =================================================================*/
+
+Form {
+	width: 90%;
+	max-width: 700px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.inputsContainer {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.custom-field {
+	position: relative;
+	font-size: 14px;
+	border-top: 20px solid transparent;
+	margin-bottom: 5px;
+	margin-right: 10px;
+	display: inline-block;
+	--field-padding: 12px;
+}
+
+.custom-field input {
+	border: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #f2f2f2;
+	padding: var(--field-padding);
+	border-radius: 3px;
+	width: 180px;
+	height: 40px;
+	outline: none;
+	font-size: 14px;
+	text-align: center;
+}
+
+.custom-field .placeholder {
+	position: absolute;
+	left: var(--field-padding);
+	width: calc(100% - (var(--field-padding) * 2));
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	top: 22px;
+	line-height: 100%;
+	transform: translateY(-50%);
+	color: #aaa;
+	transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
+
+.custom-field input.dirty + .placeholder,
+.custom-field input:focus + .placeholder,
+.custom-field input:not(:placeholder-shown) + .placeholder {
+	top: -10px;
+	font-size: 10px;
+	color: #222;
+}
+
+.custom-field.two input {
+	border-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	background: linear-gradient(90deg, #222, #222) center bottom/0 0.15em
+			no-repeat,
+		linear-gradient(90deg, #ccc, #ccc) left bottom/100% 0.15em no-repeat,
+		linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+	transition: background-size 0.3s ease;
+}
+
+.custom-field.two input.dirty,
+.custom-field.two input:not(:placeholder-shown),
+.custom-field.two input:focus {
+	background-size: 100% 0.15em, 100% 0.1em, 100%;
+}
+
+input[type='submit'] {
+	margin-left: 20px;
+	height: 40px;
+	background-color: #04aa6d;
+	border: none;
+	color: white;
+	padding: 12px 32px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.weatherContainer {
+	position: relative;
+	width: 90%;
+	max-width: 700px;
+	margin: 10px auto;
+
+	border-radius: 5px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.weatherDateConatiner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 10px;
+}
+
+.weatherDateConatiner:hover {
+	background-color: rgb(177, 171, 238);
+}
+
+.degrees {
+	font-size: 34px;
+	margin-left: -13px;
+	margin-bottom: -8px;
+}
+
+.dateContainer {
+	text-align: left;
+}
+
+.dayContainer {
+	font-size: 20px;
+}
+
+.monthContainer {
+	font-size: 16px;
+}
+
+.cloudDateContainer {
+	width: 50px;
+	font-size: 24px;
+	text-align: center;
+	color: rgba(176, 108, 13, 0.537);
+}
+
+.temperatureDateContainer {
+	font-size: 24px;
+	width: 70px;
+	text-align: left;
+}
+
+.active {
+}
+
+.inactive {
+	display: none;
+}
+
+@media only screen and (max-width: 480px) {
+	Form {
+		width: 90%;
+		display: block;
+		margin: 30px auto;
+	}
+
+	.inputsContainer {
+		display: block;
+	}
+
+	.weatherContainer {
+		width: 90%;
+	}
+
+	.custom-field {
+		width: 100%;
+		margin: 0px;
+	}
+
+	.custom-field input {
+		width: 90%;
+		margin: 0px;
+	}
+
+	input[type='submit'] {
+		width: 90%;
+		margin-left: auto;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.weatherContainer {
+		width: 90%;
+	}
+}
